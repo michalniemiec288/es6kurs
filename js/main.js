@@ -1,7 +1,5 @@
 var addNumbers = function (number1, number2) {
-    if (number1 && number2) {
-        return number1 + number2;
-    }
+    return number1 + number2;
 };
 
 document.getElementById('calcBtn').addEventListener('click', function () {
