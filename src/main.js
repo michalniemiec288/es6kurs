@@ -9,14 +9,14 @@ window.onload = function () {
     var activeResult = false;
 
     numbers.forEach(function (button) {
-        button.addEventListener("click", function () {
-            if (activeResult) {
-                result.value = button.value;
-                activeResult = false;
-            } else {
-                result.value += button.value;
-            }
-        });
+        // button.addEventListener("click", function () {
+        //     if (activeResult) {
+        //         result.value = button.value;
+        //         activeResult = false;
+        //     } else {
+        //         result.value += button.value;
+        //     }
+        // });
     });
 
     operators.forEach(function (operator) {
