@@ -176,7 +176,7 @@ margin-left:25px;
 }
 
 /*Adding a background color to the equals to button */
-#eqn-bg {
+.equal {
     background:#17a928;
     color:#fff;
     font-size:26px;
@@ -185,7 +185,7 @@ margin-left:25px;
     border-bottom:3px solid #1f7a29;
 }
 
-#eqn-bg:active {
+.equal:active {
     background:#17a928;
     color:#fff;
     font-size:26px;

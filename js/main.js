@@ -1,16 +1,54 @@
-//         CZĘŚĆ 1
+window.onload = function () {
+    var numbers = document.querySelectorAll(".num");
+    var operators = document.querySelectorAll(".operator");
+    var equal = document.querySelector(".equal");
+    var zero = document.querySelector(".zero");
+    var dot = document.querySelector(".dot");
+    var result = document.querySelector("#result");
+    var remove = document.querySelector("#delete");
+    var activeResult = false;
 
-// var addNumbers = function (number1, number2) {
-//     return number1 + number2;
-// };
+    numbers.forEach(function (button) {
+        button.addEventListener("click", function () {
+            if (activeResult) {
+                result.value = button.value;
+                activeResult = false;
+            } else {
+                result.value += button.value;
+            }
+        });
+    });
 
-// document.getElementById('calcBtn').addEventListener('click', function () {
-//     var number1 = parseFloat(document.getElementById("number1").value);
-//     var number2 = parseFloat(document.getElementById("number2").value);
-//     var result = addNumbers(number1, number2);
-//     document.getElementById("result").innerHTML = result;
-// });
+    operators.forEach(function (operator) {
+        operator.addEventListener("click", function () {
+            if (result.value !== "") {
+                result.value += operator.value;
+            }
+        })
+    });
 
-window.onload = function() {
-    // kod aplikacji
+    zero.addEventListener("click", function () {
+        if (result.value !== '0') {
+            result.value += zero.value;
+        }
+    });
+
+    dot.addEventListener("click", function () {
+        if (result.value === "") {
+            result.value = "0.";
+        } else {
+            result.value += ".";
+        }
+    });
+
+    equal.addEventListener("click", function () {
+        if (result.value !== "") {
+            result.value = eval(result.value);
+            activeResult = true;
+        }
+    });
+
+    remove.addEventListener("click", function () {
+        result.value = "";
+    });
 };
